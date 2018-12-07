@@ -1,6 +1,27 @@
 body {
     background-image: url("../images/background.jpg");
-    background-size: cover;
+    background-size: 100%;
+}
+
+.main-section {
+    width: 100%;
+    padding: 30px;
+    margin: 0 0 40px;
+    background: #ffffff;
+    border: 1px solid #dddddd;
+    opacity: 0.92;
+  }
+
+.heading {
+    text-align: center;
+}
+
+.responses {
+    text-align: center;
+    font-family: Helvetica, sans-serif;
+    font-size: 44px;
+    color: green;
+    font-weight: bold;
 }
 
 .footer {
@@ -15,4 +36,24 @@ body {
     text-align: center;
     color: white;
     font-size: 12px;
+}
+
+#infoBox {
+    text-align: center;
+    padding: 30px;
+}
+
+#title {
+    padding: 10px 0;
+    background-color: brown;
+    color: white;
+    font-size: 64px;
+    font-family: 'Times New Roman', serif;
+    font-weight: bold;
+    text-align: center;
+}
+
+#flagImg {
+    width: 100%;
+    border: 1px solid gray;
 }
