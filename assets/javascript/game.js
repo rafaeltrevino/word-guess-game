@@ -5,6 +5,7 @@ var flagImgDiv = document.getElementById("flagImg")
 var guessSpaceDiv = document.getElementById("guessSpace");
 var guessRemainDiv = document.getElementById("guessRemain");
 var lettersGuessedDiv = document.getElementById("lettersGuessed");
+
 // Starting values for game
 var userWins = 0;
 var guessRemain = 12;
