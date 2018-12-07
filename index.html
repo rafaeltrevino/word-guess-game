@@ -81,9 +81,9 @@
     // Starting values for game
     var userWins = 0;
     var guessRemain = 12;
-    var answerBlanks = [];
+    var answerArray = [];
     var lettersGuessed = [];
-    var countriesCaps = [
+    var countriesCapsMaster = [
         ["Afghanistan", "Kabul", "AF"], 
         ["Albania", "Tirana", "AL"], 
         ["Algeria", "Algiers", "DZ"], 
@@ -281,25 +281,57 @@
         ["Zambia", "Lusaka", "ZM"], 
         ["Zimbabwe", "Harare", "ZW"]
     ];
+    var countriesCaps = [];
+
+    //Populate countriesCaps array with 10 random countries from the Master list
+    for (i = 0; countriesCaps.length < 10; i++) {
+        randMaster = countriesCapsMaster[Math.floor(Math.random() * countriesCapsMaster.length)];
+        countriesCaps.push(randMaster);
+    }
 
     // Clear out values
-    guessSpaceDiv.textContent = answerBlanks;
+    guessSpaceDiv.textContent = answerArray;
     runningScoreDiv.textContent = userWins;
     guessRemainDiv.textContent = guessRemain;
 
     // Start game when user presses a key
     document.onkeyup = function(event) {
 
-        var rand = countriesCaps[Math.floor(Math.random() * countriesCaps.length)];
+        var word = countriesCaps[Math.floor(Math.random() * countriesCaps.length)];
         // Replace infoBox contents with question
-        infoBoxDiv.textContent = "What is the capital of " + rand[0] + "?";
+        infoBoxDiv.textContent = "What is the capital of " + word[0] + "?";
         // Insert country flag in image box
-        flagImgDiv.src = "./assets/images/" + rand[2] + ".png";
-        // Populate blanks
-        guessSpaceDiv.textContent = "__ ".repeat(rand[1].length);
+        flagImgDiv.src = "./assets/images/" + word[2] + ".png";
+        console.log(word[1]);
 
-    }
+        word.forEach(playGame)
+        }
 
+        function playGame() {
+            
+        }
+
+        var letter = event.key;
+        
+        lettersGuessedDiv.textContent = letter;
+
+
+
+
+
+        // Create the answer array
+        // for (i = 0; i < word[1].length; i++) {
+        //     answerArray[i] = "_";
+        //     console.log(answerArray[i]);
+        //     answerArray.join(" ");
+        //     guessSpaceDiv.textContent = answerArray;
+        // }
+
+        // for (i = 0; i < word[1].length; i++) {
+        //     answerArray[i] = letter;
+        //     guessRemain--;
+        //     console.log(guessRemain);
+        // }
 
 
 
